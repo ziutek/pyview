@@ -1,0 +1,8 @@
+$def with (divs, menu, selected)
+<ul>
+$for v in menu:
+    <li><a href='$v.url'
+    $if loop.index0 == selected:
+        id='CURRENT'
+    >$v.name</a></li>
+</ul>
