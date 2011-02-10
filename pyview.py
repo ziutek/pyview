@@ -1,13 +1,17 @@
 import os
 from web import template
 
-# Directory that contains the templates
+# Directory that contains template files
 templates_dir = "templates"
 
 class View(object):
-    def __init__(self, filename=None):
+    def __init__(self, filename=None, glob=None, **keywords):
+        """If glob isn't None it will be added to keywords as 'globals'"""
         if filename is not None:
-            self._tpl = template.frender(os.path.join(templates_dir, filename))
+            if glob is not None:
+                keywords["globals"] = glob
+            self._tpl = template.frender(os.path.join(templates_dir, filename),
+                                         **keywords)
         self._divs = {}
 
     def copy(self):
