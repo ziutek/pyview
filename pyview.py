@@ -10,8 +10,10 @@ class View(object):
         if filename is not None:
             if glob is not None:
                 keywords["globals"] = glob
-            self._tpl = template.frender(os.path.join(templates_dir, filename),
-                                         **keywords)
+            #self._tpl = template.frender(os.path.join(templates_dir, filename),
+            #                             **keywords)
+            self._tpl = getattr(template.render(templates_dir, **keywords),
+                                filename)
         self._divs = {}
 
     def copy(self):

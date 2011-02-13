@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # vim: set encoding=utf-8 :
 from datetime import datetime
+import os
 import web
+
 import view
 
 
@@ -74,17 +76,27 @@ class Edit(Page):
             "power of Python to templates."
     }
 
-
 urls = (
     "/edit", "Edit",
     "/",     "Home",
 )
 
 
+# Przed web.application nie aby nie bylo powtornego ladowania szablonow
+web.config.debug = False
+# Tworzymy obiekt aplikacji
+app = web.application(urls, globals())
+
+
+# For GAE
 def main():
-    view.init()
-    web.application(urls, globals()).run()
+    app.cgirun()
 
 
 if __name__ == "__main__":
-    main()
+    if "APPLICATION_ID" in os.environ:
+        # Google App Engine
+        main()
+    else:
+        # Run using built-in webserver
+        app.run()

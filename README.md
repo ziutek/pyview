@@ -13,7 +13,4 @@ way.
 Previously, when I've used *web.py* templates, I usually used *base* attribute
 of *web.template.render* function to define layout of the page. But defining
 the layout of the whole web site in separate Python file seems to be more
-elegant. Additionally, thanks to *pyview* I can decide myself when exactly to
-read my templates from disk (it is virtually impossible with
-*render* function - you must use *frender* function but it doesn't accept *base*
-attribute).
+elegant.
