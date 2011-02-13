@@ -14,3 +14,6 @@ Previously, when I've used *web.py* templates, I usually used *base* attribute
 of *web.template.render* function to define layout of the page. But defining
 the layout of the whole web site in separate Python file seems to be more
 elegant.
+
+*pyview* can be used with Google App Engine. See:
+http://pyview-example.appspot.com/
