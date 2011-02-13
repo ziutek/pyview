@@ -4,8 +4,8 @@ It is probably the simplest useful module I have written in Python. It contains
 only 21 lines of code.
 
 I created it for my first Python application written after a long time working
-with Go exclusively. Previously I haven't thought that I need something like this
-for my web coding in Python, but after I was using
+with Go exclusively. Previously I haven't thought that I need something like
+this for my web coding in Python, but after I was using
 [kview](https://github.com/ziutek/kview) a lot in my previous work, it became
 natural to create web page using small and reusable modules in simple and clean
 way.
@@ -15,5 +15,5 @@ of *web.template.render* function to define layout of the page. But defining
 the layout of the whole web site in separate Python file seems to be more
 elegant.
 
-*pyview* can be used with Google App Engine. See:
-http://pyview-example.appspot.com/
+*pyview* can be used with Google App Engine. Example application works at:
+[pyview-example.appspot.com](http://pyview-example.appspot.com/)
